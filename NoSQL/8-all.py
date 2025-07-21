@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
+""" Task - 8 """
 
-from pymongo import MongoClient
-list_all = __import__('8-all').list_all
-
-client = MongoClient('mongodb://127.0.0.1:27017')
-school_collection = client.my_db.school
-schools = list_all(school_collection)
-for school in schools:
-    print("[{}] {}".format(school.get('_id'), school.get('name')))
+def list_all(mongo_collection):
+    """
+    Lists all documents in a collection
+    Args:
+        mongo_collection: pymongo collection object
+    Returns:
+        List of documents, or empty list if no document exists
+    """
+    return list(mongo_collection.find())
 
