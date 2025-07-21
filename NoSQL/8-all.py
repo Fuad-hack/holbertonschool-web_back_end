@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # Task - 8
 
 from pymongo import MongoClient
